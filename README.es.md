@@ -12,6 +12,17 @@ Crea un archivo `index.html` con [la estructura básica de HTML](https://4geeks.
 $ pip3 install flask && python3 server.py
 ```
 
+### Tailwind CSS v4
+
+Este dashboard usa Tailwind CSS v4 mediante el CLI oficial y no depende de un CDN. Instala las dependencias y genera la hoja de estilos compilada con:
+
+```bash
+$ npm install
+$ npm run build
+```
+
+Durante el desarrollo puedes mantener la compilación activa con `npm run watch`. En otra terminal, inicia el servidor Flask con `python3 server.py` y abre `http://localhost:3000`.
+
 - Puedes crear tantos archivos HTML cómo desees.
 - También puedes crear archivos CSS e importarlos en tu página web utilizando una etiqueta `<link>` ubicándola entre las etiquetas `<head></head>`, de la siguiente manera:
 
@@ -23,17 +34,7 @@ $ pip3 install flask && python3 server.py
 </head>
 ```
 
-- Si deseas usar Tailwind CSS, agrégalo de forma opcional mediante el CDN oficial de Tailwind CSS v4 dentro del mismo `<head>`:
-
-```html
-<head>
-  ...
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  ...
-</head>
-```
-
+- El punto de entrada de Tailwind v4 está en `src/input.css` y utiliza `@import "tailwindcss";`. La salida generada se guarda en `dist/output.css` y se enlaza desde `index.html`.
 
 ## Agradecimientos
 
